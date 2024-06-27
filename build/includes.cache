@@ -11,6 +11,16 @@
   },
   {
     "Sourcefile": "C:\\Users\\Gregor\\Desktop\\Nace\\Programiranje\\VS Code\\GasperMIDI\\build\\sketch\\GasperMIDI.ino.cpp",
+    "Include": "MIDI.h",
+    "Includepath": "C:\\Users\\Gregor\\Documents\\Arduino\\libraries\\MIDI_Library\\src"
+  },
+  {
+    "Sourcefile": "C:\\Users\\Gregor\\Desktop\\Nace\\Programiranje\\VS Code\\GasperMIDI\\build\\sketch\\GasperMIDI.ino.cpp",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\Gregor\\Documents\\Arduino\\libraries\\MIDI_Library\\src\\MIDI.cpp",
     "Include": "",
     "Includepath": null
   }

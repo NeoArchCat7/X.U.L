@@ -1,3 +1,6 @@
+#include <MIDI.h>
+
+
 void setup()
 {
 	
