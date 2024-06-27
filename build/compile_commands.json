@@ -1,0 +1,36 @@
+[
+ {
+  "directory": "c:\\Users\\Gregor\\Desktop\\Nace\\Programiranje\\VS Code\\GasperMIDI",
+  "arguments": [
+   "C:\\Users\\Gregor\\AppData\\Local\\Arduino15\\packages\\arduino\\tools\\avr-gcc\\7.3.0-atmel3.6.1-arduino7/bin/avr-g++",
+   "-c",
+   "-g",
+   "-Os",
+   "-w",
+   "-std=gnu++11",
+   "-fpermissive",
+   "-fno-exceptions",
+   "-ffunction-sections",
+   "-fdata-sections",
+   "-fno-threadsafe-statics",
+   "-Wno-error=narrowing",
+   "-MMD",
+   "-flto",
+   "-mmcu=atmega32u4",
+   "-DF_CPU=16000000L",
+   "-DARDUINO=10607",
+   "-DARDUINO_AVR_LEONARDO",
+   "-DARDUINO_ARCH_AVR",
+   "-DUSB_VID=0x2341",
+   "-DUSB_PID=0x8036",
+   "-DUSB_MANUFACTURER=\"Unknown\"",
+   "-DUSB_PRODUCT=\"Arduino Leonardo\"",
+   "-IC:\\Users\\Gregor\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\avr\\1.8.6\\cores\\arduino",
+   "-IC:\\Users\\Gregor\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\avr\\1.8.6\\variants\\leonardo",
+   "C:\\Users\\Gregor\\Desktop\\Nace\\Programiranje\\VS Code\\GasperMIDI\\build\\sketch\\GasperMIDI.ino.cpp",
+   "-o",
+   "C:\\Users\\Gregor\\Desktop\\Nace\\Programiranje\\VS Code\\GasperMIDI\\build\\sketch\\GasperMIDI.ino.cpp.o"
+  ],
+  "file": "C:\\Users\\Gregor\\Desktop\\Nace\\Programiranje\\VS Code\\GasperMIDI\\build\\sketch\\GasperMIDI.ino.cpp"
+ }
+]

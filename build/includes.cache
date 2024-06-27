@@ -1,0 +1,17 @@
+[
+  {
+    "Sourcefile": null,
+    "Include": "",
+    "Includepath": "C:\\Users\\Gregor\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\avr\\1.8.6\\cores\\arduino"
+  },
+  {
+    "Sourcefile": null,
+    "Include": "",
+    "Includepath": "C:\\Users\\Gregor\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\avr\\1.8.6\\variants\\leonardo"
+  },
+  {
+    "Sourcefile": "C:\\Users\\Gregor\\Desktop\\Nace\\Programiranje\\VS Code\\GasperMIDI\\build\\sketch\\GasperMIDI.ino.cpp",
+    "Include": "",
+    "Includepath": null
+  }
+]

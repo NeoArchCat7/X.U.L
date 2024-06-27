@@ -1,0 +1,7 @@
+#line 1 "C:\\Users\\Gregor\\Desktop\\Nace\\Programiranje\\VS Code\\GasperMIDI\\.vscode\\arduino.json"
+{
+    "sketch": "GasperMIDI.ino",
+    "output": "build",
+    "board": "arduino:avr:leonardo",
+    "port": "COM6"
+}
