@@ -27,7 +27,7 @@
    "-DUSB_PRODUCT=\"Arduino Leonardo\"",
    "-IC:\\Users\\Gregor\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\avr\\1.8.6\\cores\\arduino",
    "-IC:\\Users\\Gregor\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\avr\\1.8.6\\variants\\leonardo",
-   "-IC:\\Users\\Gregor\\Documents\\Arduino\\libraries\\MIDI_Library\\src",
+   "-IC:\\Users\\Gregor\\Documents\\Arduino\\libraries\\MIDIUSB\\src",
    "C:\\Users\\Gregor\\Desktop\\Nace\\Programiranje\\VS Code\\GasperMIDI\\build\\sketch\\GasperMIDI.ino.cpp",
    "-o",
    "C:\\Users\\Gregor\\Desktop\\Nace\\Programiranje\\VS Code\\GasperMIDI\\build\\sketch\\GasperMIDI.ino.cpp.o"
@@ -62,11 +62,11 @@
    "-DUSB_PRODUCT=\"Arduino Leonardo\"",
    "-IC:\\Users\\Gregor\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\avr\\1.8.6\\cores\\arduino",
    "-IC:\\Users\\Gregor\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\avr\\1.8.6\\variants\\leonardo",
-   "-IC:\\Users\\Gregor\\Documents\\Arduino\\libraries\\MIDI_Library\\src",
-   "C:\\Users\\Gregor\\Documents\\Arduino\\libraries\\MIDI_Library\\src\\MIDI.cpp",
+   "-IC:\\Users\\Gregor\\Documents\\Arduino\\libraries\\MIDIUSB\\src",
+   "C:\\Users\\Gregor\\Documents\\Arduino\\libraries\\MIDIUSB\\src\\MIDIUSB.cpp",
    "-o",
-   "C:\\Users\\Gregor\\Desktop\\Nace\\Programiranje\\VS Code\\GasperMIDI\\build\\libraries\\MIDI_Library\\MIDI.cpp.o"
+   "C:\\Users\\Gregor\\Desktop\\Nace\\Programiranje\\VS Code\\GasperMIDI\\build\\libraries\\MIDIUSB\\MIDIUSB.cpp.o"
   ],
-  "file": "C:\\Users\\Gregor\\Documents\\Arduino\\libraries\\MIDI_Library\\src\\MIDI.cpp"
+  "file": "C:\\Users\\Gregor\\Documents\\Arduino\\libraries\\MIDIUSB\\src\\MIDIUSB.cpp"
  }
 ]

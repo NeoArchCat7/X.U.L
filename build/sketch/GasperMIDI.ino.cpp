@@ -1,6 +1,6 @@
 #include <Arduino.h>
 #line 1 "C:\\Users\\Gregor\\Desktop\\Nace\\Programiranje\\VS Code\\GasperMIDI\\GasperMIDI.ino"
-#include <MIDI.h>
+#include <MIDIUSB.h>
 
 
 #line 4 "C:\\Users\\Gregor\\Desktop\\Nace\\Programiranje\\VS Code\\GasperMIDI\\GasperMIDI.ino"

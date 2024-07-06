@@ -1,8 +1,5 @@
-C:\Users\Gregor\Desktop\Nace\Programiranje\VS\ Code\GasperMIDI\build\libraries\MIDI_Library\MIDI.cpp.o: \
- C:\Users\Gregor\Documents\Arduino\libraries\MIDI_Library\src\MIDI.cpp \
- C:\Users\Gregor\Documents\Arduino\libraries\MIDI_Library\src\MIDI.h \
- C:\Users\Gregor\Documents\Arduino\libraries\MIDI_Library\src\midi_Defs.h \
- C:\Users\Gregor\Documents\Arduino\libraries\MIDI_Library\src\midi_Namespace.h \
+C:\Users\Gregor\Desktop\Nace\Programiranje\VS\ Code\GasperMIDI\build\core\IPAddress.cpp.o: \
+ C:\Users\Gregor\AppData\Local\Arduino15\packages\arduino\hardware\avr\1.8.6\cores\arduino\IPAddress.cpp \
  C:\Users\Gregor\AppData\Local\Arduino15\packages\arduino\hardware\avr\1.8.6\cores\arduino/Arduino.h \
  C:\Users\Gregor\AppData\Local\Arduino15\packages\arduino\hardware\avr\1.8.6\cores\arduino/binary.h \
  C:\Users\Gregor\AppData\Local\Arduino15\packages\arduino\hardware\avr\1.8.6\cores\arduino/WCharacter.h \
@@ -16,8 +13,4 @@ C:\Users\Gregor\Desktop\Nace\Programiranje\VS\ Code\GasperMIDI\build\libraries\M
  C:\Users\Gregor\AppData\Local\Arduino15\packages\arduino\hardware\avr\1.8.6\cores\arduino/USBDesc.h \
  C:\Users\Gregor\AppData\Local\Arduino15\packages\arduino\hardware\avr\1.8.6\cores\arduino/USBCore.h \
  C:\Users\Gregor\AppData\Local\Arduino15\packages\arduino\hardware\avr\1.8.6\variants\leonardo/pins_arduino.h \
- C:\Users\Gregor\Documents\Arduino\libraries\MIDI_Library\src\midi_Platform.h \
- C:\Users\Gregor\Documents\Arduino\libraries\MIDI_Library\src\midi_Settings.h \
- C:\Users\Gregor\Documents\Arduino\libraries\MIDI_Library\src\midi_Message.h \
- C:\Users\Gregor\Documents\Arduino\libraries\MIDI_Library\src\serialMIDI.h \
- C:\Users\Gregor\Documents\Arduino\libraries\MIDI_Library\src\MIDI.hpp
+ C:\Users\Gregor\AppData\Local\Arduino15\packages\arduino\hardware\avr\1.8.6\cores\arduino/IPAddress.h

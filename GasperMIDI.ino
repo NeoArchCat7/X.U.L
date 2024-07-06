@@ -1,4 +1,4 @@
-#include <MIDI.h>
+#include <MIDIUSB.h>
 
 
 void setup()
