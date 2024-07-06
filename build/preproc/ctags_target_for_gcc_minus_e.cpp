@@ -4,14 +4,10 @@
 
 USBRename dummy = USBRename("GasperMIDI", "SmartCatLoaf", "0001");
 
-
-
 void setup()
 {
-
 }
 
 void loop()
 {
-
 }
