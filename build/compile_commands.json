@@ -1,6 +1,6 @@
 [
  {
-  "directory": "c:\\Users\\Gregor\\Desktop\\Nace\\Programiranje\\VS Code\\GasperMIDI",
+  "directory": "c:\\Users\\Gregor\\Desktop\\Nace\\Programiranje\\VS Code - git\\GasperMIDI",
   "arguments": [
    "C:\\Users\\Gregor\\AppData\\Local\\Arduino15\\packages\\arduino\\tools\\avr-gcc\\7.3.0-atmel3.6.1-arduino7/bin/avr-g++",
    "-c",
@@ -29,14 +29,14 @@
    "-IC:\\Users\\Gregor\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\avr\\1.8.6\\variants\\leonardo",
    "-IC:\\Users\\Gregor\\Documents\\Arduino\\libraries\\MIDIUSB\\src",
    "-IC:\\Users\\Gregor\\Documents\\Arduino\\libraries\\Arduino-USB-Rename-master",
-   "C:\\Users\\Gregor\\Desktop\\Nace\\Programiranje\\VS Code\\GasperMIDI\\build\\sketch\\GasperMIDI.ino.cpp",
+   "C:\\Users\\Gregor\\Desktop\\Nace\\Programiranje\\VS Code - git\\GasperMIDI\\build\\sketch\\GasperMIDI.ino.cpp",
    "-o",
-   "C:\\Users\\Gregor\\Desktop\\Nace\\Programiranje\\VS Code\\GasperMIDI\\build\\sketch\\GasperMIDI.ino.cpp.o"
+   "C:\\Users\\Gregor\\Desktop\\Nace\\Programiranje\\VS Code - git\\GasperMIDI\\build\\sketch\\GasperMIDI.ino.cpp.o"
   ],
-  "file": "C:\\Users\\Gregor\\Desktop\\Nace\\Programiranje\\VS Code\\GasperMIDI\\build\\sketch\\GasperMIDI.ino.cpp"
+  "file": "C:\\Users\\Gregor\\Desktop\\Nace\\Programiranje\\VS Code - git\\GasperMIDI\\build\\sketch\\GasperMIDI.ino.cpp"
  },
  {
-  "directory": "c:\\Users\\Gregor\\Desktop\\Nace\\Programiranje\\VS Code\\GasperMIDI",
+  "directory": "c:\\Users\\Gregor\\Desktop\\Nace\\Programiranje\\VS Code - git\\GasperMIDI",
   "arguments": [
    "C:\\Users\\Gregor\\AppData\\Local\\Arduino15\\packages\\arduino\\tools\\avr-gcc\\7.3.0-atmel3.6.1-arduino7/bin/avr-g++",
    "-c",
@@ -67,12 +67,12 @@
    "-IC:\\Users\\Gregor\\Documents\\Arduino\\libraries\\Arduino-USB-Rename-master",
    "C:\\Users\\Gregor\\Documents\\Arduino\\libraries\\MIDIUSB\\src\\MIDIUSB.cpp",
    "-o",
-   "C:\\Users\\Gregor\\Desktop\\Nace\\Programiranje\\VS Code\\GasperMIDI\\build\\libraries\\MIDIUSB\\MIDIUSB.cpp.o"
+   "C:\\Users\\Gregor\\Desktop\\Nace\\Programiranje\\VS Code - git\\GasperMIDI\\build\\libraries\\MIDIUSB\\MIDIUSB.cpp.o"
   ],
   "file": "C:\\Users\\Gregor\\Documents\\Arduino\\libraries\\MIDIUSB\\src\\MIDIUSB.cpp"
  },
  {
-  "directory": "c:\\Users\\Gregor\\Desktop\\Nace\\Programiranje\\VS Code\\GasperMIDI",
+  "directory": "c:\\Users\\Gregor\\Desktop\\Nace\\Programiranje\\VS Code - git\\GasperMIDI",
   "arguments": [
    "C:\\Users\\Gregor\\AppData\\Local\\Arduino15\\packages\\arduino\\tools\\avr-gcc\\7.3.0-atmel3.6.1-arduino7/bin/avr-g++",
    "-c",
@@ -103,7 +103,7 @@
    "-IC:\\Users\\Gregor\\Documents\\Arduino\\libraries\\Arduino-USB-Rename-master",
    "C:\\Users\\Gregor\\Documents\\Arduino\\libraries\\Arduino-USB-Rename-master\\usb_rename.cpp",
    "-o",
-   "C:\\Users\\Gregor\\Desktop\\Nace\\Programiranje\\VS Code\\GasperMIDI\\build\\libraries\\Arduino-USB-Rename-master\\usb_rename.cpp.o"
+   "C:\\Users\\Gregor\\Desktop\\Nace\\Programiranje\\VS Code - git\\GasperMIDI\\build\\libraries\\Arduino-USB-Rename-master\\usb_rename.cpp.o"
   ],
   "file": "C:\\Users\\Gregor\\Documents\\Arduino\\libraries\\Arduino-USB-Rename-master\\usb_rename.cpp"
  }

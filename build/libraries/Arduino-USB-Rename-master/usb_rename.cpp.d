@@ -1,4 +1,4 @@
-C:\Users\Gregor\Desktop\Nace\Programiranje\VS\ Code\GasperMIDI\build\libraries\Arduino-USB-Rename-master\usb_rename.cpp.o: \
+C:\Users\Gregor\Desktop\Nace\Programiranje\VS\ Code\ -\ git\GasperMIDI\build\libraries\Arduino-USB-Rename-master\usb_rename.cpp.o: \
  C:\Users\Gregor\Documents\Arduino\libraries\Arduino-USB-Rename-master\usb_rename.cpp \
  C:\Users\Gregor\Documents\Arduino\libraries\Arduino-USB-Rename-master\usb_rename.h \
  C:\Users\Gregor\AppData\Local\Arduino15\packages\arduino\hardware\avr\1.8.6\cores\arduino/PluggableUSB.h \

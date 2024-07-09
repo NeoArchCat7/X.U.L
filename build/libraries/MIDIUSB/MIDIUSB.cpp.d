@@ -1,4 +1,4 @@
-C:\Users\Gregor\Desktop\Nace\Programiranje\VS\ Code\GasperMIDI\build\libraries\MIDIUSB\MIDIUSB.cpp.o: \
+C:\Users\Gregor\Desktop\Nace\Programiranje\VS\ Code\ -\ git\GasperMIDI\build\libraries\MIDIUSB\MIDIUSB.cpp.o: \
  C:\Users\Gregor\Documents\Arduino\libraries\MIDIUSB\src\MIDIUSB.cpp \
  C:\Users\Gregor\Documents\Arduino\libraries\MIDIUSB\src\MIDIUSB.h \
  C:\Users\Gregor\AppData\Local\Arduino15\packages\arduino\hardware\avr\1.8.6\cores\arduino/Arduino.h \

@@ -1,5 +1,5 @@
-C:\Users\Gregor\Desktop\Nace\Programiranje\VS\ Code\GasperMIDI\build\sketch\GasperMIDI.ino.cpp.o: \
- C:\Users\Gregor\Desktop\Nace\Programiranje\VS\ Code\GasperMIDI\build\sketch\GasperMIDI.ino.cpp \
+C:\Users\Gregor\Desktop\Nace\Programiranje\VS\ Code\ -\ git\GasperMIDI\build\sketch\GasperMIDI.ino.cpp.o: \
+ C:\Users\Gregor\Desktop\Nace\Programiranje\VS\ Code\ -\ git\GasperMIDI\build\sketch\GasperMIDI.ino.cpp \
  C:\Users\Gregor\AppData\Local\Arduino15\packages\arduino\hardware\avr\1.8.6\cores\arduino/Arduino.h \
  C:\Users\Gregor\AppData\Local\Arduino15\packages\arduino\hardware\avr\1.8.6\cores\arduino/binary.h \
  C:\Users\Gregor\AppData\Local\Arduino15\packages\arduino\hardware\avr\1.8.6\cores\arduino/WCharacter.h \
