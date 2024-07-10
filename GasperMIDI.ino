@@ -6,14 +6,14 @@
 USBRename dummy = USBRename("GasperMIDI", "SmartCatLoaf", "0001");
 
 // Configuration constants
-#define HIGH_RES 1        // 0 for 7-bit MIDI (0-127), 1 for 14-bit MIDI (0-16383)
+#define HIGH_RES 0        // 0 for 7-bit MIDI (0-127), 1 for 14-bit MIDI (0-16383) --> CURRENTLY NOT WORKING
 #define NUM_FADERS 3      // Number of faders connected to the controller
 #define FADER_THRESHOLD 5 // Sensitivity threshold for detecting changes in fader position
 
 // Pin assignments for the faders
 const uint8_t FADER_PINS[NUM_FADERS] = {A1, A2, A3};
 // Corresponding Control Change (CC) numbers for each fader
-const uint8_t CC_NUMBERS[NUM_FADERS] = {0, 1, 2};
+const uint8_t CC_NUMBERS[NUM_FADERS] = {20, 21, 22};
 uint16_t lastValues[NUM_FADERS] = {0};
 
 uint8_t mapToMIDI(uint16_t value)

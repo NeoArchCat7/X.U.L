@@ -14,7 +14,7 @@ USBRename dummy = USBRename("GasperMIDI", "SmartCatLoaf", "0001");
 // Pin assignments for the faders
 const uint8_t FADER_PINS[3 /* Number of faders connected to the controller*/] = {A1, A2, A3};
 // Corresponding Control Change (CC) numbers for each fader
-const uint8_t CC_NUMBERS[3 /* Number of faders connected to the controller*/] = {0, 1, 2};
+const uint8_t CC_NUMBERS[3 /* Number of faders connected to the controller*/] = {20, 21, 22};
 uint16_t lastValues[3 /* Number of faders connected to the controller*/] = {0};
 
 uint8_t mapToMIDI(uint16_t value)
@@ -42,18 +42,11 @@ void loop()
         // Check if the change in fader value exceeds the threshold
         if (((value - lastValues[i])>0?(value - lastValues[i]):-(value - lastValues[i])) >= 5 /* Sensitivity threshold for detecting changes in fader position*/)
         {
+# 52 "C:\\Users\\Gregor\\Desktop\\Nace\\Programiranje\\VS Code - git\\GasperMIDI\\GasperMIDI.ino"
+            // If high resolution mode is disabled (7-bit MIDI)
 
-            // If high resolution mode is enabled (14-bit MIDI)
-
-            lsb = value & 0x7F;
-            msb = (value >> 7) & 0x7F;
-            MidiUSB.sendMIDI({0x0B, 0xB0, CC_NUMBERS[i], lsb});
-            MidiUSB.sendMIDI({0x0B, 0xB0, static_cast<uint8_t>(CC_NUMBERS[i] + 32), msb});
-
-
-
-
-
+            // Serial.println(mapToMIDI(value)); // Uncomment for debugging
+            MidiUSB.sendMIDI({0x0B, 0xB0, CC_NUMBERS[i], mapToMIDI(value)});
 
 
             MidiUSB.flush();
