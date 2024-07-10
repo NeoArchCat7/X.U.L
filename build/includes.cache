@@ -16,11 +16,6 @@
   },
   {
     "Sourcefile": "C:\\Users\\Gregor\\Desktop\\Nace\\Programiranje\\VS Code - git\\GasperMIDI\\build\\sketch\\GasperMIDI.ino.cpp",
-    "Include": "ResponsiveAnalogRead.h",
-    "Includepath": "C:\\Users\\Gregor\\Documents\\Arduino\\libraries\\ResponsiveAnalogRead\\src"
-  },
-  {
-    "Sourcefile": "C:\\Users\\Gregor\\Desktop\\Nace\\Programiranje\\VS Code - git\\GasperMIDI\\build\\sketch\\GasperMIDI.ino.cpp",
     "Include": "usb_rename.h",
     "Includepath": "C:\\Users\\Gregor\\Documents\\Arduino\\libraries\\Arduino-USB-Rename-master"
   },
@@ -31,11 +26,6 @@
   },
   {
     "Sourcefile": "C:\\Users\\Gregor\\Documents\\Arduino\\libraries\\MIDIUSB\\src\\MIDIUSB.cpp",
-    "Include": "",
-    "Includepath": null
-  },
-  {
-    "Sourcefile": "C:\\Users\\Gregor\\Documents\\Arduino\\libraries\\ResponsiveAnalogRead\\src\\ResponsiveAnalogRead.cpp",
     "Include": "",
     "Includepath": null
   },
