@@ -1,19 +1,18 @@
 // GasperMIDI, custom MIDI controller by SmartCatLoaf
 
 #include <MIDIUSB.h>
+#include <ArduinoJson.h>
 #include "usb_rename.h"
 
 USBRename dummy = USBRename("GasperMIDI", "SmartCatLoaf", "0001");
 
 // Configuration constants
-#define HIGH_RES 0        // 0 for 7-bit MIDI (0-127), 1 for 14-bit MIDI (0-16383) --> CURRENTLY NOT WORKING
-#define NUM_FADERS 3      // Number of faders connected to the controller
-#define FADER_THRESHOLD 5 // Sensitivity threshold for detecting changes in fader position
+#define NUM_FADERS 3
+#define FADER_THRESHOLD 5
 
-// Pin assignments for the faders
-const uint8_t FADER_PINS[NUM_FADERS] = {A1, A2, A3};
-// Corresponding Control Change (CC) numbers for each fader
-const uint8_t CC_NUMBERS[NUM_FADERS] = {20, 21, 22};
+int res = 0; // 0 - low res; 1 - mid res; 2 - high res
+uint8_t FADER_PINS[NUM_FADERS] = {A1, A2, A3};
+uint8_t CC_NUMBERS[NUM_FADERS] = {1, 2, 3};
 uint16_t lastValues[NUM_FADERS] = {0};
 
 uint8_t mapToMIDI(uint16_t value)
@@ -23,11 +22,36 @@ uint8_t mapToMIDI(uint16_t value)
 
 void setup()
 {
-    // Serial.begin(9600); // Uncomment for debugging
+    Serial.begin(9600); // Uncomment for debugging
 }
 
 void loop()
 {
+
+    if (Serial.available())
+    {
+        StaticJsonDocument<200> doc;
+        DeserializationError error = deserializeJson(doc, Serial);
+
+        if (error)
+        {
+            Serial.println("Failed to parse JSON");
+            return;
+        }
+
+        int resolution = doc["resolution"];
+        int cc1 = doc["ccValues"][0];
+        int cc2 = doc["ccValues"][1];
+        int cc3 = doc["ccValues"][2];
+
+        res = resolution;
+        // iterate through the faders
+        for (int i = 0; i < NUM_FADERS; i++)
+        {
+            CC_NUMBERS[i] = doc["ccValues"][i];
+        }
+    }
+
     static uint8_t i;
     static uint16_t value;
     static uint8_t lsb, msb;
@@ -41,7 +65,7 @@ void loop()
         // Check if the change in fader value exceeds the threshold
         if (abs(value - lastValues[i]) >= FADER_THRESHOLD)
         {
-#if HIGH_RES
+#if RESOLUTION
             // If high resolution mode is enabled (14-bit MIDI)
 
             lsb = value & 0x7F;

@@ -16,6 +16,11 @@
   },
   {
     "Sourcefile": "C:\\Users\\Gregor\\Desktop\\Nace\\Programiranje\\VS Code - git\\GasperMIDI\\build\\sketch\\GasperMIDI.ino.cpp",
+    "Include": "ArduinoJson.h",
+    "Includepath": "C:\\Users\\Gregor\\Documents\\Arduino\\libraries\\ArduinoJson\\src"
+  },
+  {
+    "Sourcefile": "C:\\Users\\Gregor\\Desktop\\Nace\\Programiranje\\VS Code - git\\GasperMIDI\\build\\sketch\\GasperMIDI.ino.cpp",
     "Include": "usb_rename.h",
     "Includepath": "C:\\Users\\Gregor\\Documents\\Arduino\\libraries\\Arduino-USB-Rename-master"
   },
