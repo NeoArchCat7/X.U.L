@@ -1,9 +1,7 @@
 # 1 "C:\\Users\\Gregor\\Desktop\\Nace\\Programiranje\\VS Code - git\\GasperMIDI\\GasperMIDI.ino"
-// GasperMIDI, custom MIDI controller by SmartCatLoaf
-
+# 2 "C:\\Users\\Gregor\\Desktop\\Nace\\Programiranje\\VS Code - git\\GasperMIDI\\GasperMIDI.ino" 2
+# 3 "C:\\Users\\Gregor\\Desktop\\Nace\\Programiranje\\VS Code - git\\GasperMIDI\\GasperMIDI.ino" 2
 # 4 "C:\\Users\\Gregor\\Desktop\\Nace\\Programiranje\\VS Code - git\\GasperMIDI\\GasperMIDI.ino" 2
-# 5 "C:\\Users\\Gregor\\Desktop\\Nace\\Programiranje\\VS Code - git\\GasperMIDI\\GasperMIDI.ino" 2
-# 6 "C:\\Users\\Gregor\\Desktop\\Nace\\Programiranje\\VS Code - git\\GasperMIDI\\GasperMIDI.ino" 2
 
 USBRename dummy = USBRename("GasperMIDI", "SmartCatLoaf", "0001");
 
@@ -11,24 +9,35 @@ USBRename dummy = USBRename("GasperMIDI", "SmartCatLoaf", "0001");
 
 
 
-int res = 0;
+
+int res = 0; // 0 - low res (7-bit); 1 - mid res (10-bit); 2 - high res (14-bit)
 uint8_t FADER_PINS[3] = {A1, A2, A3};
 uint8_t CC_NUMBERS[3] = {1, 2, 3};
 uint16_t lastValues[3] = {0};
 
-uint8_t mapToMIDI(uint16_t value)
-{
-    return map(value, 0, 1023, 0, 127);
-}
+// Function prototypes
+void sendMIDI7bit(uint8_t channel, uint8_t control, uint8_t value);
+void sendMIDI10bit(uint8_t channel, uint8_t control, uint16_t value);
+void sendMIDI14bit(uint8_t channel, uint8_t control, uint16_t value);
+uint16_t applyDeadZone(uint16_t value, uint16_t maxValue);
+void debugPrint(const char *message);
+void debugPrintln(const char *message);
 
 void setup()
 {
-    Serial.begin(9600); // Uncomment for debugging
+    if (false /* Set to false to disable debug prints*/)
+    {
+        Serial.begin(9600);
+        while (!Serial)
+        {
+            ; // Wait for serial port to connect. Needed for native USB
+        }
+        debugPrintln("GasperMIDI initialized");
+    }
 }
 
 void loop()
 {
-
     if (Serial.available())
     {
         StaticJsonDocument<200> doc;
@@ -36,56 +45,154 @@ void loop()
 
         if (error)
         {
-            Serial.println("Failed to parse JSON");
+            debugPrint("JSON parsing failed: ");
+            debugPrintln(error.c_str());
             return;
         }
 
-        int resolution = doc["resolution"];
-        int cc1 = doc["ccValues"][0];
-        int cc2 = doc["ccValues"][1];
-        int cc3 = doc["ccValues"][2];
-
-        res = resolution;
-        // iterate through the faders
-        for (int i = 0; i < 3; i++)
+        if (doc.containsKey("resolution") && doc.containsKey("ccValues"))
         {
-            CC_NUMBERS[i] = doc["ccValues"][i];
+            res = doc["resolution"];
+            if (res < 0 || res > 2)
+            {
+                debugPrintln("Invalid resolution value");
+                return;
+            }
+            for (int i = 0; i < 3; i++)
+            {
+                if (doc["ccValues"][i].is<int>())
+                {
+                    CC_NUMBERS[i] = doc["ccValues"][i];
+                }
+                else
+                {
+                    debugPrintln("Invalid CC number");
+                    return;
+                }
+            }
+            debugPrintln("Configuration updated");
+        }
+        else
+        {
+            debugPrintln("Invalid JSON structure");
         }
     }
 
-    Serial.print("Configuration (res-cc1-cc2-cc3) -->   ");
-    Serial.print(res);
-    Serial.print(" : ");
-    Serial.print(CC_NUMBERS[0]);
-    Serial.print(" : ");
-    Serial.print(CC_NUMBERS[1]);
-    Serial.print(" : ");
-    Serial.println(CC_NUMBERS[2]);
-
-    delay(3000);
-
-    static uint8_t i;
-    static uint16_t value;
-    static uint8_t lsb, msb;
-
-    // Iterate through each fader
-    for (i = 0; i < 3; i++)
+    for (int i = 0; i < 3; i++)
     {
-        // Read the current value of the fader
-        value = analogRead(FADER_PINS[i]);
+        uint16_t value = analogRead(FADER_PINS[i]);
 
-        // Check if the change in fader value exceeds the threshold
-        if (((value - lastValues[i])>0?(value - lastValues[i]):-(value - lastValues[i])) >= 5)
+        if ((((int)value - (int)lastValues[i])>0?((int)value - (int)lastValues[i]):-((int)value - (int)lastValues[i])) >= 5)
         {
-# 87 "C:\\Users\\Gregor\\Desktop\\Nace\\Programiranje\\VS Code - git\\GasperMIDI\\GasperMIDI.ino"
-            // If high resolution mode is disabled (7-bit MIDI)
+            value = applyDeadZone(value, 1023);
 
-            // Serial.println(mapToMIDI(value)); // Uncomment for debugging
-            MidiUSB.sendMIDI({0x0B, 0xB0, CC_NUMBERS[i], mapToMIDI(value)});
+            if (false /* Set to false to disable debug prints*/)
+            {
+                Serial.print("Fader ");
+                Serial.print(i + 1);
+                Serial.print(" | Resolution: ");
+                Serial.print(res);
+                Serial.print(" | Raw value: ");
+                Serial.print(value);
+                Serial.print(" | ");
+            }
 
-
-            MidiUSB.flush();
+            switch (res)
+            {
+            case 0:
+            { // 7-bit resolution
+                uint8_t mappedValue = map(value, 0, 1023, 0, 127);
+                sendMIDI7bit(0, CC_NUMBERS[i], mappedValue);
+                if (false /* Set to false to disable debug prints*/)
+                {
+                    Serial.print("CC: ");
+                    Serial.print(CC_NUMBERS[i]);
+                    Serial.print(", Value: ");
+                    Serial.println(mappedValue);
+                }
+                break;
+            }
+            case 1:
+            { // 10-bit resolution
+                sendMIDI10bit(0, CC_NUMBERS[i], value);
+                if (false /* Set to false to disable debug prints*/)
+                {
+                    Serial.print("CC1: ");
+                    Serial.print(CC_NUMBERS[i]);
+                    Serial.print(", CC2: ");
+                    Serial.print(CC_NUMBERS[i] + 32);
+                    Serial.print(", Value: ");
+                    Serial.println(value);
+                }
+                break;
+            }
+            case 2:
+            { // 14-bit resolution
+                uint16_t scaledValue = map(value, 0, 1023, 0, 16368);
+                sendMIDI14bit(0, CC_NUMBERS[i], value);
+                if (false /* Set to false to disable debug prints*/)
+                {
+                    Serial.print("CC1: ");
+                    Serial.print(CC_NUMBERS[i]);
+                    Serial.print(", CC2: ");
+                    Serial.print(CC_NUMBERS[i] + 32);
+                    Serial.print(", Value: ");
+                    Serial.println(scaledValue);
+                }
+                break;
+            }
+            }
             lastValues[i] = value;
         }
+    }
+}
+
+void sendMIDI7bit(uint8_t channel, uint8_t control, uint8_t value)
+{
+    midiEventPacket_t event = {0x0B, 0xB0 | channel, control, value};
+    MidiUSB.sendMIDI(event);
+    MidiUSB.flush();
+}
+
+void sendMIDI10bit(uint8_t channel, uint8_t control, uint16_t value)
+{
+    uint8_t lsb = value & 0x7F;
+    uint8_t msb = (value >> 7) & 0x07;
+    sendMIDI7bit(channel, control, lsb);
+    sendMIDI7bit(channel, control + 32, msb);
+}
+
+void sendMIDI14bit(uint8_t channel, uint8_t control, uint16_t value)
+{
+    uint16_t scaledValue = map(value, 0, 1023, 0, 16368);
+    uint8_t lsb = scaledValue & 0x7F;
+    uint8_t msb = (scaledValue >> 7) & 0x7F;
+    sendMIDI7bit(channel, control, lsb);
+    sendMIDI7bit(channel, control + 32, msb);
+}
+
+uint16_t applyDeadZone(uint16_t value, uint16_t maxValue)
+{
+    const uint16_t deadZone = maxValue / 100; // 1% dead zone at each end
+    if (value < deadZone)
+        return 0;
+    if (value > maxValue - deadZone)
+        return maxValue;
+    return map(value, deadZone, maxValue - deadZone, 0, maxValue);
+}
+
+void debugPrint(const char *message)
+{
+    if (false /* Set to false to disable debug prints*/)
+    {
+        Serial.print(message);
+    }
+}
+
+void debugPrintln(const char *message)
+{
+    if (false /* Set to false to disable debug prints*/)
+    {
+        Serial.println(message);
     }
 }
