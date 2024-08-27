@@ -163,14 +163,14 @@ void sendMIDI7bit(uint8_t channel, uint8_t control, uint8_t value)
 void sendMIDI10bit(uint8_t channel, uint8_t control, uint16_t value)
 {
     uint8_t lsb = value & 0x7F;
-    uint8_t msb = (value >> 7) & 0x07;
+    uint8_t msb = (value >> 7) & 0x03;
     sendMIDI7bit(channel, control, lsb);
     sendMIDI7bit(channel, control + 32, msb);
 }
 
 void sendMIDI14bit(uint8_t channel, uint8_t control, uint16_t value)
 {
-    uint16_t scaledValue = map(value, 0, 1023, 0, 16368);
+    uint16_t scaledValue = map(value, 0, 1023, 0, 16383);
     uint8_t lsb = scaledValue & 0x7F;
     uint8_t msb = (scaledValue >> 7) & 0x7F;
     sendMIDI7bit(channel, control, lsb);
