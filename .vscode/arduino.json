@@ -1,6 +1,6 @@
 {
-    "sketch": "GasperMIDI.ino",
-    "output": "build",
-    "board": "arduino:avr:leonardo",
-    "port": "COM11"
+  "sketch": "X.U.L.ino",
+  "output": "build",
+  "board": "arduino:avr:leonardo",
+  "port": "COM11"
 }
